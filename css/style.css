@@ -12,6 +12,7 @@ a {
     color: inherit;
     text-decoration: none;
     color: #333333;
+    transition: color 0.2s ease-in-out;
 }
 
 h2 {
@@ -101,8 +102,23 @@ body {
     padding: 13px 20px;
     color: #CC9933;
     border: 1px solid #CC9933;
-    ;
     border-radius: 10px;
+    transition: background-color 0.2s ease, color 0.2s linear;
+}
+
+.btn:focus {
+    background-color: #CC9933;
+    color: #FFFFFF;
+}
+
+.btn:hover {
+    background-color: #CC9933;
+    color: #FFFFFF;
+}
+
+.btn:active {
+    background-color: #A47312;
+    color: #FFFFFF;
 }
 
 .flex {
@@ -132,19 +148,37 @@ body {
 }
 
 .header-logo {
+    display: flex;
+    justify-content: center;
     width: 261px;
     height: 54px;
     margin-right: 40px;
 }
 
 .header-phone {
+    display: flex;
+    align-items: center;
     font-weight: 500;
     font-size: 20px;
     line-height: 20px;
     color: #666666;
+    transition: color 0.2s ease-in-out;
 }
 
-.header-top-right {
+.header-phone:focus {
+    color: #CC9933;
+}
+
+.header-phone:hover {
+    color: #CC9933;
+}
+
+.header-phone:active {
+    color: #A47312;
+}
+
+.header-top-right,
+.link-phone {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -153,6 +187,19 @@ body {
     background-position: left center;
     background-repeat: no-repeat;
     padding-left: 35px;
+    transition: color 0.2s ease-in-out;
+}
+
+.header-top-right:focus, .link-phone:focus, .link-email:focus {
+    color: #CC9933;
+}
+
+.header-top-right:hover, .link-phone:hover, .link-email:hover {
+    color: #F0BF5F;
+}
+
+.header-top-right:active, .link-phone:active, .link-email:active {
+    color: #A47312;
 }
 
 .nav {
@@ -174,7 +221,22 @@ body {
     font-size: 16px;
     line-height: 16px;
     color: #666666;
+    transition: color 0.2s ease-in-out;
 }
+
+.header-list-link:focus {
+    color: #CC9933;
+}
+
+.header-list-link:hover {
+    color: #CC9933;
+}
+
+.header-list-link:active {
+    color: #A47312;
+}
+
+
 
 .header-btn:not(:last-child) {
     margin-right: 40px;
@@ -204,11 +266,18 @@ body {
 }
 
 .special-offers-item-lux {
+    position: relative;
     width: 573px;
     padding: 211px 234px 41px 40px;
     flex-direction: column;
     object-fit: cover;
-    border-radius: 15px;
+    /* border-radius: 15px; */
+    
+}
+
+.special-offers-item-lux:focus-within {
+    outline-offset: 8px;
+    outline: 1px solid #CC9933;
 }
 
 .special-offers-item-title-lux {
@@ -241,10 +310,20 @@ body {
     padding: 40px 108px 40px 45px;
     object-fit: cover;
     border-radius: 15px;
+    /* top: -3px;
+    outline: 1px solid #CC9933; */
 }
 
 .place-offers-item:not(:last-child) {
     margin-bottom: 24px;
+}
+
+.place-offers-item {
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    left: -3px;
+    border: 1px solid #CC9933;
 }
 
 .special-offers-item {
@@ -282,11 +361,8 @@ body {
     color: #F0BF5F;
 }
 
-.services-descr {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 200%;
-    color: #000000;
+.special-offers-item-link:active {
+    color: #FFFFFF;
 }
 
 .special-offers-item {
@@ -333,13 +409,25 @@ body {
     background-repeat: no-repeat;
     object-fit: cover;
     border-radius: 15px;
+    filter: drop-shadow(0px 4px 1px rgba(0, 0, 0, 0.2));
 }
 
 
 .div-services-item {
+    position: relative;
     flex-direction: column;
     padding: 191px 126px 50px 45px;
+    
+    /* outline: 1px solid #CC9933; */
+    
 }
+
+.div-services-item:focus-within {
+    outline-offset: 8px;
+    outline: 1px solid #CC9933;  
+}
+
+
 
 .services-link {
     background-image: url(../img/Rectangle-2.svg);
@@ -351,6 +439,15 @@ body {
     font-size: 20px;
     line-height: 200%;
     color: #CC9933;
+    filter: drop-shadow(0px 4px 1px rgba(0, 0, 0, 0.2));
+}
+
+.services-descr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 200%;
+    color: #000000;
+    filter: drop-shadow(0px 4px 1px rgba(0, 0, 0, 0.2));
 }
 
 .services-item-1 {
@@ -488,6 +585,7 @@ body {
 }
 
 .placement-item-div {
+    position: relative;
     padding: 373px 54px 27px 54px;
 }
 
@@ -501,6 +599,18 @@ body {
     background-repeat: no-repeat;
     background-position: center right;
 }
+
+/* Растягиваем ссылку на весь блок (картинку) при помощи данного псевдоэлемента */
+.placement-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
 
 /* TOUR */
 
